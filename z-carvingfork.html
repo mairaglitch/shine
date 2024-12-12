@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Bootstrap Icons -->
+  <link 
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" 
+  rel="stylesheet">
+
+
+
+    <style>
+
+.btn{
+        background-color: #16423C;
+        color:white;
+        
+     }
+
+     .btn:hover{
+       border:1px solid  #16423C;
+       background-color: white;
+        
+     }
+
+     
+      /* history button setting */
+      #button{
+      color:white;
+      text-decoration: none;
+      background-color: #16423C;
+      padding:10px;
+      border-radius:5px;
+    }
+  
+
+    *{
+        text-transform: capitalize;
+    }
+    /* Custom styling for a modern and elegant look */
+    .navbar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #2c3e50;
+    }
+    .navbar-brand:focus {
+      color: #0d3b35;
+    }
+    .nav-link {
+      font-weight: 500;
+      margin: 0 10px;
+    }
+    .nav-link:hover {
+      color: #16423C;
+    }
+    .nav-icons {
+      font-size: 1.2rem;
+      margin-left: 15px;
+    }
+    .nav-icons:hover {
+      color:#16423C;
+    }
+    .dropdown-menu {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .dropdown-item:hover {
+    background-color: #d4edda ;
+    color: #0d3b35 ; 
+}
+
+
+
+
+    .btn-signup {
+      border-radius: 15px;
+      font-weight: bold;
+      background-color: #16423C;
+      /* color: white; */
+      transition: all 0.3s ease;
+    }
+ 
+   
+  
+    .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 500px; 
+        }
+
+
+        .book-container {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
+    }
+    .left-page, .right-page {
+      padding: 20px;
+    }
+    .left-page {
+      border-right: 1px solid #ddd;
+    }
+
+    .embed-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+
+
+/* Signup  */
+.modal-content {
+            border-radius: 12px;
+        }
+        .modal-header {
+            border-bottom: none;
+            text-align: center;
+        }
+        .modal-header h5 {
+            margin: 0 auto;
+            color: #333;
+        }
+        .modal-body {
+            padding: 2rem;
+        }
+        .form-control {
+            border-radius: 10px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+        }
+        .modal-footer {
+            border-top: none;
+            text-align: center;
+        }
+
+
+
+
+
+
+.embed-responsive video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 994px) {
+    .hide-on-small {
+        display: none;
+    }
+   
+}
+/* Custom CSS */
+.modal-title {
+    text-align: center;
+    width: 100%; /* Ensures the centering applies to the full modal-header width */
+}
+
+
+
+
+    *{
+        text-transform: capitalize;
+    }
+    /* Custom styling for a modern and elegant look */
+    .navbar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #2c3e50;
+    }
+    .navbar-brand:hover {
+      color: #3498db;
+    }
+    .nav-link {
+      font-weight: 500;
+      margin: 0 10px;
+      font-family:system-ui;
+    }
+    .nav-link:hover {
+      color: #16423C;
+    }
+    .nav-icons {
+      font-size: 1.2rem;
+      margin-left: 15px;
+    }
+    .nav-icons:hover {
+      color:#16423C;
+    }
+    .dropdown-menu {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .dropdown-item:hover {
+    background-color: #d4edda ;
+    color: #0d3b35 ; 
+}
+
+
+
+
+    .btn-signup {
+      border-radius: 15px;
+      font-weight: bold;
+      background-color: #16423C;
+      /* color: white; */
+      transition: all 0.3s ease;
+    }
+    .btn-signup:hover {
+     border:1px solid #16423C;
+     color:black;
+
+    }
+
+    /* add this on every page */
+
+    .btn-signup:focus {
+     border:1px solid #16423C;
+     color:rgb(255, 255, 255);
+
+    }
+       
+        .btn {
+            background-color: #16423C;
+            color: white;
+        }
+
+        .btn:hover {
+            border: 1px solid #16423C;
+            background-color: white;
+            color: #16423C;
+        }
+
+        .modal-content {
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            text-align: center;
+            background-color: #16423C;
+            color: white;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .modal-footer {
+            border-top: none;
+            text-align: center;
+        }
+
+         /* Custom CSS */
+         .product-main-img {
+            max-width: 500px;
+            width: 400px;
+            height: 350px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .thumbnail-container img {
+            max-width: 100px;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .thumbnail-container img:hover {
+            border-color: #007bff;
+        }
+
+        .price {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        #counter{
+            display: flex;
+            align-items: last baseline;
+            justify-content: space-around;
+            margin-left: -2%;
+            font-size: x-large;
+            max-width: 200px;
+        }
+
+        .addorsub, #buy{
+            background-color: #16423C;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .addorsub{
+            width: 50px;
+        }
+
+        button{
+            border: none;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+     <!-- Modern Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html"  style="font-family:poppins;font-style: italic;color: #0d3b35;"><img src="logo/Untitled5_20241121132908.png" alt="" style="height:50px;width:50px">Shine Utensils</a>
+      <!-- Hamburger Menu (for mobile view) -->
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html" target="_blank">about</a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#" 
+              id="navbarDropdown" 
+              role="button" 
+              data-bs-toggle="dropdown" 
+              aria-expanded="false">
+              utensils
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="COOKING PART ONE.html" >cooking utensils</a></li>
+              <li><a class="dropdown-item" href="eatingpartone.html" >eating utensils</a></li>
+              <li><a class="dropdown-item" href="servingpartone.html" >serving utensils</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="discount.html" >discount</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="contact us new.html" >contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="reviewandfeedback.html" >feedback</a>
+          </li>
+
+          <!-- Icons for Add to Cart, Login, and Sign Up -->
+          <li class="nav-item">
+            <a class="nav-link nav-icons" href="#" >
+              <i class="bi bi-person" data-bs-toggle="modal" data-bs-target="#loginModal"></i> <!-- Login Icon -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id= "button"  class="  btn-signup nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal" >Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  
+<!-- Sign Up Modal Structure -->
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="signUpModalLabel" style="text-align: center;"  data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label" required>Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label" aria-required="true">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit"   class=" btn w-100" style="background-color: #1f6158;color:white" data-bs-toggle="modal">Sign Up</button>
+                </form>
+            </div>
+            <div class="modal-footer text-center w-100">
+                <p class="text-muted w-100" data-bs-toggle="modal" data-bs-target="#loginModal">Already have an account? <a href="#" >Log in here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal login Structure -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h5 class="modal-title " id="loginModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn  w-100" style="background-color: #1f6158;color:white">Login</button>
+                </form>
+                <hr>
+
+                <div class="div" style="display:flex;justify-content:space-evenly">
+                  <button class="btn social-btn btn-google" style="background-color: #1f6158;color:white"><i class="fab fa-google"></i> <a  style="text-decoration: none;color:white"  href="https://myaccount.google.com/" target="_blank" rel="noopener noreferrer">Login with Google</a></button>
+                  <button class="btn social-btn btn-facebook" style="background-color: #1f6158;color:white"><i class="fab fa-facebook-f"></i> <a  style="text-decoration: none;color:white"  href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer">Login with facebook</a> </button>
+  
+                </div>
+
+            </div>
+            <div class="modal-footer text-center w-100">
+                <p class="text-muted w-100" data-bs-toggle="modal" data-bs-target="#signUpModal">Don't have an account? <a href="#"  >Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<br><br>
+
+
+<div class="container my-5">
+  <div class="row">
+      <!-- Main Product Image -->
+      <div class="col-md-6 mx-auto text-center">
+          <img id="mainImage" src="Utensils images/kitchenutensils/serving utensils/serving fork/Carving Fork Meat 1.0.png" alt="Bamboo Cutting Board" class="product-main-img">
+          <!-- Thumbnail Images -->
+          <div class="thumbnail-container">
+              <img src="Utensils images/kitchenutensils/serving utensils/serving fork/Carving Fork Meat 1.1.png" alt="Image 1" onclick="changeImage('Utensils images/kitchenutensils/serving utensils/serving fork/Carving Fork Meat 1.1.png')">
+              <img src="Utensils images/kitchenutensils/serving utensils/serving fork/Carving Fork Meat 1.2.png" alt="Image 2" onclick="changeImage('Utensils images/kitchenutensils/serving utensils/serving fork/Carving Fork Meat 1.2.png')">
+              <img src="Utensils images/kitchenutensils/serving utensils/serving fork/Carving Fork Meat 1.3.png" alt="Image 3" onclick="changeImage('Utensils images/kitchenutensils/serving utensils/serving fork/Carving Fork Meat 1.3.png')">
+          </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="col-md-6">
+          <h2>carving fork</h2>
+          <p class="price">$10.99</p>
+          <p>
+              Our Carving Meat Fork Features A Long, Sturdy Design And Comfortable Grip, Making It Perfect For Holding Meat Steady While You Slice With Precision And Control. Carve With Precision And Ease! Our Carving Meat Fork Features A Long, Sturdy Design And Comfortable Grip, Making It Perfect For Holding Meat Steady While You Slice With Precision And Control.
+          </p>
+
+
+               
+                <div id="counter">
+                  <button onclick="decrement()" class="addorsub">-</button>
+                  <span id="score">1</span>
+                  <button onclick="increment()" class="addorsub">+</button>
+              </div>
+              
+
+                <br>
+               
+                <button class="btn mt-3" data-bs-toggle="modal" data-bs-target="#orderDetailsModal">
+                  Buy It Now</button>
+            </div>
+        </div>
+    </div>
+    <!-- -------------------- -->
+
+    <br><br><br>
+
+  
+
+    <footer class="pt-5 pb-4 mt-5" style="background-color: #16423C; color: white;">
+        <div class="container text-center text-md-left">
+          <div class="row text-center text-md-left">
+            
+            <!-- Column 1: Company Information -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold" style="color: grey;">Company Name</h5>
+              <p>
+                <a href="index.html" style="color: #ffffff; text-decoration: none;">Shine Utensils</a>
+                <br><br>
+                <a href="index.html" style="color: #ffffff; text-decoration: none;">since (1999)</a>
+      
+              </p>
+            </div>
+            
+            <!-- Column 2: Products Links -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold" style="color: grey;">Products</h5>
+              <p><a href="COOKING PART ONE.html" class="text-white" style="text-decoration: none;">Cooking Utensils</a></p>
+              <p><a href="eatingpartone.html" class="text-white" style="text-decoration: none;">Eating Utensils</a></p>
+              <p><a href="servingpartone.html" class="text-white" style="text-decoration: none;">Serving Utensils</a></p>
+            </div>
+      
+            <!-- Column 3: Useful Links -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold" style="color: grey;">website Links</h5>
+              <p><a href="index.html" class="text-white" style="text-decoration: none;">Home Page</a></p>
+              <p><a href="about.html" class="text-white" style="text-decoration: none;">About us</a></p>
+              <p><a href="contact us new.html" class="text-white" style="text-decoration: none;">Contact Us</a></p>
+              <p><a href="reviewandfeedback.html" class="text-white" style="text-decoration: none;">Feedback</a></p>
+            </div>
+      
+            <!-- Column 4: Contact Info -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold" style="color: grey;">Contact</h5>
+              <p><i class="fas fa-home mr-3"></i> Shop #12, Utensils Market, calefornia.</p>
+              <p><i class="fas fa-envelope mr-3"></i><a href="mailto:customercare@shineutensils.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;color:white"> shineutensils@gmail.com</a></p>
+              <p><i class="fas fa-phone mr-3"></i> Phone: <a href="tel:+923001234567" style="color: #ffffff; text-decoration: none;">+213 300 123 4567</a></p>
+            </div>
+          </div>
+          
+          <!-- Horizontal line -->
+          <hr class="mb-4">
+      
+          <!-- Footer bottom section -->
+          <div class="row align-items-center">
+            <!-- Copyright -->
+            <div class="col-md-7 col-lg-8">
+              <p class="text-center text-md-left">© 2024 Copyright:
+                <a href="#" style="text-decoration: none;">
+                  <strong style="color: grey;">shineutensils.com</strong>
+                </a>
+              </p>
+            </div>
+      
+            <!-- Social media links -->
+            <div class="col-md-5 col-lg-4">
+              <div class="text-center text-md-right">
+                <ul class="list-unstyled list-inline">
+                  <li class="list-inline-item">
+                    <a href="https://www.facebook.com/ShineUtensilsPK" class="btn-floating btn-sm text-white"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://twitter.com/ShineUtensilsPK" class="btn-floating btn-sm text-white"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.instagram.com/ShineUtensilsPK" class="btn-floating btn-sm text-white"><i class="fab fa-instagram"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://pk.linkedin.com/company/ShineUtensilsPK" class="btn-floating btn-sm text-white"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+<!-- Order Details Modal -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderDetailsModalLabel" style="color:white">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Order Form -->
+                <form id="orderDetailsForm">
+                  <!-- Name Input -->
+                  <div class="mb-3">
+                      <label for="name" class="form-label">Your Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                  </div>
+              
+                  <!-- Email Input -->
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                  </div>
+              
+                  <!-- Phone Number Input -->
+                  <div class="mb-3">
+                      <label for="phone" class="form-label">Phone Number</label>
+                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890" required>
+                  </div>
+              
+                  <!-- Delivery Address -->
+                  <div class="mb-3">
+                      <label for="address" class="form-label">Delivery Address</label>
+                      <textarea class="form-control" id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+                  </div>
+              
+                  <!-- Dropdown for Delivery Options -->
+                  <div class="mb-3">
+                      <label for="deliveryOption" class="form-label">Delivery Option</label>
+                      <select class="form-control" id="deliveryOption" name="deliveryOption" required>
+                          <option value="">Select Delivery Option</option>
+                          <option value="standard">Standard Delivery (3-5 days)</option>
+                          <option value="express">Express Delivery (1-2 days)</option>
+                      </select>
+                  </div>
+              
+                  <!-- Additional Notes -->
+                  <div class="mb-3">
+                      <label for="notes" class="form-label">Additional Notes</label>
+                      <textarea class="form-control" id="notes" name="notes" placeholder="Any special instructions?" rows="3"></textarea>
+                  </div>
+              
+                  <!-- Payment Method -->
+                  <div class="mb-3">
+                      <label for="paymentMethod" class="form-label">Payment Method</label>
+                      <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                          <option value="">Select Payment Method</option>
+                          <option value="credit_card">Credit Card</option>
+                          <option value="paypal">PayPal</option>
+                          <option value="cash_on_delivery">Cash on Delivery</option>
+                      </select>
+                  </div>
+              
+                  <!-- Terms and Conditions Checkbox -->
+                  <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="terms" required>
+                      <label for="terms" class="form-check-label">I agree to the <a href="#" target="_blank">terms and conditions</a></label>
+                  </div>
+              
+                  <!-- Submit Button -->
+                  <div class="d-grid">
+                      <button type="submit" class="btn btn-primary mt-3">Place Order</button>
+                  </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for SweetAlert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+
+        // Function to change the main product image
+        function changeImage(src) {
+        const mainImage = document.getElementById('mainImage');
+        if (mainImage) {
+            mainImage.src = src; // Update the source of the main image
+        }
+    }
+
+
+    let score = 1; // Initialize the counter
+
+function increment() {
+    score++; // Increase the score
+    document.getElementById('score').textContent = score; // Update the displayed score
+}
+
+function decrement() {
+    if (score > 1) { // Prevent the score from going below 1
+        score--; // Decrease the score
+        document.getElementById('score').textContent = score; // Update the displayed score
+    }
+}
+
+
+
+
+
+
+
+    document.getElementById('orderDetailsForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Show SweetAlert confirmation
+        swal({
+            title: "Order Placed!",
+            text: "Thank you! Your order has been successfully placed.",
+            icon: "success",
+            button: "OK"
+        });
+
+        // Reset the form and close the modal
+        document.getElementById('orderDetailsForm').reset();
+        var modal = bootstrap.Modal.getInstance(document.getElementById('orderDetailsModal'));
+        modal.hide();
+    });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
